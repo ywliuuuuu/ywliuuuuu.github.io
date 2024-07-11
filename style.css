@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: .05em;
+    color: #333;
+}
+
+.w {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    /* font-family: serif; */
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: .05em;
+    color: #34475e;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section:nth-of-type(odd) {
+    background-color: #f7f7f7;
+}
+
+/* -----------------
+        NAV 
+----------------- */
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 66px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px -6px rgba(0, 0, 0, .1);
+    z-index: 999;
+}
+
+.nav-box {
+    max-width: 1240px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.nav-box .right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-box .right ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-box .right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-box .right ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 66px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #373737;
+}
+
+.nav-box .right ul li a:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    left: 50%;
+    bottom: 0px;
+    background: #373737;
+    transition: all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transform: translateX(-50%);
+}
+
+.nav-box .right ul li a:hover:before {
+    left: 0;
+    width: 100%;
+    transform: translateX(0);
+}
+
+/* -----------------
+    About me 
+----------------- */
+
+.about {
+    margin-top: 66px;
+}
+
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 15%;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.profile-img img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.profile-body {
+    flex: 1;
+}
+
+.profile-body p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.profile-body p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.profile-body p a {
+    color: #c4797d;
+}
+
+.profile-body p a:hover {
+    text-decoration: underline;
+}
+
+/* -----------------
+    Education 
+----------------- */
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 25px;
+    bottom: 80px;
+    left: 15%;
+    margin-left: -3px;
+    background-color: #fff;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 70%;
+    left: 15%;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* right: -17px; */
+    background-color: white;
+    border: 4px solid #e0e0e0;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    left: -14px;
+}
+
+.current::after {
+    border: 4px solid #758796;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 5px;
+}
+
+.content h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.content h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #747474;
+    margin-bottom: 4px;
+}
+
+.content p {
+    font-size: 12px;
+    color: #758796;
+}
+
+/* -----------------
+    Projects 
+----------------- */
+
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.project-img {
+    width: 25%;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.project-img img {
+    width: 100%;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h2 {
+    margin-top: 5%;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.project-info p {
+    margin-top: 5%;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+button {
+    margin-top: 5%;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+    color: #fff;
+}
+
+/* -----------------
+    Contact 
+----------------- */
+
+.contact {
+    max-width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+.intro {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #747474;
+}
+
+.contact div {
+    display: flex;
+    align-items: center;
+}
+
+.contact div a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #66a4bd;
+    margin-right: 10px;
+}
+
+.contact div a:hover {
+    color: #92c3d6;
+}
+
+.contact .icon {
+    font-size: 24px;
+    color: #758796;
+    margin-right: 5px;
+}
+
+.contact span {
+    font-size: 14px;
+    color: #3a4f61;
+}
+
+/* 響應式*/
+@media screen and (max-width: 1240px) {
+    .w {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* -----------------
+            NAV 
+    ----------------- */
+
+    .nav {
+        height: auto;
+        text-align: center;
+    }
+
+    .nav-box {
+        padding-right: 20px;
+    }
+
+    .nav-box .right ul {
+        gap: 10px;
+    }
+
+    /* -----------------
+        About me
+    ----------------- */
+
+    .profile {
+        display: block;
+    }
+
+    .profile-img {
+        width: 150px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+
+    .profile-body p {
+        padding: 0px 20px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .profile-body p:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    /* -----------------
+        Education
+    ----------------- */
+
+    .timeline::after {
+        left: 30px;
+    }
+
+    .container {
+        width: 80%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 30px;
+    }
+
+    .container::after {
+        left: -14px;
+    }
+
+    .content {
+        margin-left: -40px;
+    }
+
+    /* -----------------
+        Projects
+    ----------------- */
+
+    .project {
+        display: block;
+    }
+
+    .project-img {
+        width: 0px;
+        margin-bottom: -50px;
+    }
+
+    .project-info h2 {
+        padding: 0px 20px;
+    }
+
+    .project-info p {
+        margin-top: 10px;
+        padding: 0px 20px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+}
